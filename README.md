@@ -19,5 +19,14 @@ prepared statement lobby search query with http request? Could be slow and unfri
 to server seems nice.)
 
 I can put in client code in the game to store the ip address and port behind the scenes so that the typical player does not need to
-see this information and provide some privacy for the host. TODO: Get OpenSSL integrated with Java RMI socket factory for more secure
-network.
+see this information and provide some privacy for the host. 
+
+TODO: 
+- Thoroughly comment RMI Messenger now that it works using solely the application. 
+- Also error handling like disconnects and reconnects.
+- Integrate Instant messenger into Plot Four.
+- Add in lobby browser to game client.
+- Get OpenSSL integrated with Java RMI socket factory for more secure network.
+- Put the forum together. Considering MongoDB because Yumei says it works better than MySQL.
+- Back to fleshing out website learning Angular.js, more HTML, and CSS.
+- Make more games to download and play.
