@@ -18,10 +18,9 @@ PlayerLimit, HostRegion(So that players can find better connections. Maybe try p
 prepared statement lobby search query with http request? Could be slow and unfriendly for user. The thought of seeing ping snapshot 
 to server seems nice.)
 
-I can put in client code in the game to store the ip address and port behind the scenes so that the typical player does not need to
-see this information and provide some privacy for the host. 
+I can put in client code in the game to store the ip address and port behind the scenes so that the typical player does not see this information and provide some privacy for the host. 
 
-TODO: 
+General Project TODO: 
 - Thoroughly comment RMI Messenger now that it works using solely the application. 
 - Also error handling like disconnects and reconnects.
 - Integrate Instant messenger into Plot Four.
