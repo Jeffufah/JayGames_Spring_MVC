@@ -7,6 +7,18 @@
     
     <display-name>JayGames_SpringMVC</display-name>
     
+    <session-config>
+        <session-timeout>15</session-timeout>
+    </session-config>
+    
+    <welcome-file-list>
+        <welcome-file>Home</welcome-file>
+    </welcome-file-list>
+    
+    <listener>
+        <listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+    </listener>
+    
     <servlet>
         <servlet-name>spring-dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
