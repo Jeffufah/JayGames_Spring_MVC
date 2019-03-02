@@ -8,13 +8,18 @@
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="
-        http://www.springframework.org/schema/beans     
+        http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/mvc 
         http://www.springframework.org/schema/mvc/spring-mvc.xsd
         http://www.springframework.org/schema/context 
         http://www.springframework.org/schema/context/spring-context.xsd">
 
+    <!--
+        Declares explicit support for annotation-driven MVC controllers
+        including declarative validation support via @Valid annotation.
+    -->
+    <mvc:annotation-driven/>
     
     <!--
         Directs the front controller to look in the base-package listed below
@@ -22,11 +27,13 @@
     -->
     <context:component-scan base-package="com.jaygames_spring_mvc.controllers"/> 
     
-    <!-- 
-        Declares explicit support for annotation-driven MVC controllers 
-        including declarative validation support via @Valid annotation.
+
+    
+    <!--
+        Directs the controller to listed location to include css files and images.
     -->
-    <mvc:annotation-driven/>
+    <mvc:resources mapping="/css/**" location="/WEB-INF/resources/css/" />
+    <mvc:resources mapping="/lol/**" location="/WEB-INF/resources/images/" />
     
     <!--
         Tells the front controller to start here before processing any requests.
@@ -39,7 +46,7 @@
         -->
         <mvc:interceptor>
             <mvc:mapping path="/admissionForm.html"/>
-            <bean class="com.jaygames_spring_mvc.controllers.DayOfWeekBasedAccessInterceptor"/>
+            <bean class="com.jaygames_spring_mvc.controllers_practice.DayOfWeekBasedAccessInterceptor"/>
         </mvc:interceptor>
         
         <!--
@@ -72,7 +79,7 @@
     -->
     <bean id="messageSource"
         class = "org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basename" value="/WEB-INF/properties/Student_Form_Messages"/>
+        <property name="basename" value="/WEB-INF/properties/practice/Student_Form_Messages"/>
         
         <!-- 
             Makes server restart no longer necessary by loading changes made to
