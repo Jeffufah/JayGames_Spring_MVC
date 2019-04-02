@@ -196,7 +196,7 @@ public final class GameClient
             {
                 try
                 {
-                    Thread.sleep(250);
+                    Thread.sleep(1000);
                     pollServer();
                     Platform.runLater(() -> gameUI.clearTempMessages());   
                 }
