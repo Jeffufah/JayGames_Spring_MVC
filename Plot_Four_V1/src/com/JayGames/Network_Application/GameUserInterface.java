@@ -2,6 +2,9 @@ package com.JayGames.Network_Application;
 
 import com.JayGames.PlotFour_Multiplayer.PlotFourGame;
 import java.rmi.RemoteException;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.application.Platform;
@@ -36,16 +39,20 @@ public class GameUserInterface
     
     private final PlotFourGame plotFourGameMultiplayer;
     
-    private final VBox chatWindow = new VBox(5);
+    private VBox chatWindow = new VBox(5);
     
     private Label membersLabel = new Label();
 
-    private final Label hostIPLabel = new Label();
+    private Label hostIPLabel = new Label();
 
-    private final Label pingLabel = new Label();
+    private Label pingLabel = new Label();
     
-    private final String lobbyMemberHeader = "(Lobby Members)                      "
+    private String lobbyMemberHeader = "(Lobby Members)                      "
             + "\n____________________________________\n";
+    
+    private ArrayList<AnchorPane> tempMessages = new ArrayList();
+    
+    private Date lastTempMsgTimeStamp = new Date();
     
     /**
      * Constructs this class by requiring the pageLoader for navigating pages,
@@ -77,7 +84,7 @@ public class GameUserInterface
             {
                 try
                 {
-                    Message clientMessage = new Message(gameClient.getName(), textField.getText(), false, false);
+                    Message clientMessage = new Message(gameClient.getName(), textField.getText(), false, false, false);
                     gameClient.sendMessage(clientMessage);
                     textField.setText("");
                 }
@@ -98,7 +105,7 @@ public class GameUserInterface
             {
                 try
                 {
-                    Message clientMessage = new Message(gameClient.getName(), textField.getText(), false, false);
+                    Message clientMessage = new Message(gameClient.getName(), textField.getText(), false, false, false);
                     gameClient.sendMessage(clientMessage);
                     textField.setText("");
                 }
@@ -165,18 +172,26 @@ public class GameUserInterface
      * Creates a label to be placed into the chat window with a client message
      * contained within.
      * @param message A String containing a message from a client or server.
+     * @param tempMessage A Boolean of true if the message should be removed
+     * after some time.
      */
-    public void updateChat(String message)
+    public void updateChat(String message, boolean tempMessage)
     {
         AnchorPane anchorPane = new AnchorPane();
         Label label = new Label(message);
         label.setWrapText(true);
         label.setTextAlignment(TextAlignment.LEFT);
-        label.setMaxWidth(780);
+        label.setMaxWidth(285);
         AnchorPane.setLeftAnchor(label, 5.0);
         AnchorPane.setTopAnchor(label, 5.0);
         anchorPane.getChildren().addAll(label);
         chatWindow.getChildren().add(anchorPane);
+        
+        if (tempMessage)
+        {
+            System.out.println("temp message found");
+            addTempMessage(anchorPane);
+        }
     }
 
     /**
@@ -209,10 +224,12 @@ public class GameUserInterface
     /**
      * Puts the incoming message into the chat window on the javafx thread.
      * @param message A String containing a message from the client or server.
+     * @param tempMessage A Boolean of true if the message should be removed
+     * after some time.
      */
-    public void setMessage(String message)
+    public void setMessage(String message, boolean tempMessage)
     {
-        Platform.runLater(() -> updateChat(message));
+        Platform.runLater(() -> updateChat(message, tempMessage));
     }
 
     /**
@@ -233,7 +250,7 @@ public class GameUserInterface
         }
         else
         {
-            pingString = "" + ping;
+            pingString = Long.toString(ping);
         }
 
         Platform.runLater(() -> pingLabel.setText("Ping: " + pingString + " ms"));
@@ -301,7 +318,7 @@ public class GameUserInterface
         reconnectButton.setMaxWidth(75);
         reconnectButton.setOnAction(buttonClicked ->
         {
-            setMessage("Attempting to reconnect to the server...");
+            setMessage("Attempting to reconnect to the server...", false);
             gameClient.setKeepPolling(true);
             gameClient.startPollingThread();
             stage.close();
@@ -342,11 +359,11 @@ public class GameUserInterface
         if (gameClient.checkIsServerLocal())
         {
             Platform.runLater(() -> hostIPLabel.setText("Host IP: " + gameClient.getHostIP()));
-            setMessage("Server awaiting connections...");
+            setMessage("Server awaiting connections...", false);
         }
         else
         {
-            setMessage("You are connected.");
+            setMessage("You are connected.", false);
         }
 
         StringBuilder namesCollection = new StringBuilder();
@@ -360,5 +377,34 @@ public class GameUserInterface
         }
 
         membersLabel.setText(lobbyMemberHeader + namesCollection.toString());
+    }
+    
+    /**
+     * Puts temporary messages into an ArrayList to provide a reference for
+     * when the message should be removed.
+     * 
+     * @param tempMessage An object of type AnchorPane which holds a message. 
+     */
+    public void addTempMessage(AnchorPane tempMessage)
+    {
+        lastTempMsgTimeStamp = new Date();
+        tempMessages.add(tempMessage);
+    }
+    
+    /**
+     * Checks if a temporary message has been around longer than the allotted time
+     * and removes it when its the case.
+     */
+    public void clearTempMessages()
+    {
+        long diff = DateExpressions.getDateDiff(lastTempMsgTimeStamp, new Date(), TimeUnit.SECONDS);
+        int timeoutThreshold = 5;
+        if (diff > timeoutThreshold)
+        {
+            for (AnchorPane pane : tempMessages)
+            {
+                chatWindow.getChildren().remove(pane);
+            }
+        }
     }
 }

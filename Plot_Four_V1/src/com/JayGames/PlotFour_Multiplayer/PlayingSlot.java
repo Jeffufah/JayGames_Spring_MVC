@@ -81,7 +81,6 @@ public class PlayingSlot
                 {
                     if (chip.getFill() == Color.WHITE)
                     {
-
                         if (gameClient.getPlayerNumber() == 1 && gameManager.getTurnStatus() == 1 
                                 || gameClient.getPlayerNumber() == 2 && gameManager.getTurnStatus() == -1)
                         {

@@ -89,7 +89,7 @@ public class GameManager
         isGameOver = false;
         p1Turn = 1;
         turn = 0;
-        
+        canClickSlots = true;
         for(PlayingSlot[] rows : playingGrid)
         {
             for (PlayingSlot playingSlot : rows)

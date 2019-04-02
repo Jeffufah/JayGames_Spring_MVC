@@ -29,9 +29,9 @@ public final class GameClient
     
     private ServerInterface serverConnection; //Used to perform RMI calls.
 
-    private Thread clientMessageThread; //The thread that sends and recieves messages.
+    private Thread pollingThread; //The thread that sends and recieves messages.
     
-    private boolean keepPolling = false; //Used to allow clientMessageThread to run.
+    private boolean keepPolling = false; //Used to allow pollingThread to run.
     
     private boolean isConnected = false; //Ensures connection before loading messenger page.
 
@@ -190,7 +190,7 @@ public final class GameClient
      */
     public void startPollingThread()
     {
-        Runnable messengerThread = () ->
+        Runnable pollThread = () ->
         {            
             while (keepPolling)
             {
@@ -198,6 +198,7 @@ public final class GameClient
                 {
                     Thread.sleep(1000);
                     pollServer();
+                    Platform.runLater(() -> gameUI.clearTempMessages());   
                 }
                 catch (InterruptedException | RemoteException ex)
                 {
@@ -215,8 +216,8 @@ public final class GameClient
                 }
             }
         };
-        clientMessageThread = new Thread(messengerThread);
-        clientMessageThread.start();
+        pollingThread = new Thread(pollThread);
+        pollingThread.start();
     }
     
     /**
@@ -285,18 +286,18 @@ public final class GameClient
         
         for (int i = 0; i < messages.size(); i++)
         {
-            Message clientMessage = messages.get(i);
-            gameUI.setMessage(clientMessage.getName() + " -> " + clientMessage.getMessage());
+            Message message = messages.get(i);
+            gameUI.setMessage(message.getName() + " -> " + message.getMessage(), message.getIsTempMessage());
 
-            if (clientMessage.getIsClientDisconnecting())
+            if (message.getIsClientDisconnecting())
             {
-                removeClient(clientMessage.getName());
+                removeClient(message.getName());
             }
             
-            if (clientMessage.getIsNewClient())
+            if (message.getIsNewClient())
             {
-                System.out.println("MessengerClient: pollServer: clientMessage: Adding new client");
-                addClient(clientMessage.getName());
+                System.out.println("MessengerClient: pollServer: message: Adding new client");
+                addClient(message.getName());
             }
         }
 
@@ -320,23 +321,22 @@ public final class GameClient
     private void processGameEvents(GameEventsContainer eventsContainer)
     {
         gameEventQueue.clear();
-        gameEventCount = eventsContainer.getLastGameEventIndex();
         
-        ArrayList<GameEvent> gameEvents = eventsContainer.getGameEvents();
-        
-        for (GameEvent event : gameEvents)
+        if ((gameEventCount > eventsContainer.getLastGameEventIndex()))
         {
-            if (event.getIsDropChipEvent())
+            gameEventCount = eventsContainer.getLastGameEventIndex();
+            Platform.runLater(() -> plotFourGameMultiplayer.getGameManager().resetGame());
+        }
+        else
+        {
+            gameEventCount = eventsContainer.getLastGameEventIndex();
+
+            ArrayList<GameEvent> gameEvents = eventsContainer.getGameEvents();
+
+            for (GameEvent event : gameEvents)
             {
                 Platform.runLater(() -> plotFourGameMultiplayer.dropChip(event.getColumnId()));
             }
-            
-            if(event.getIsResetRequestEvent())
-            {
-                Platform.runLater(() -> plotFourGameMultiplayer.getGameManager().resetGame());
-                gameUI.setMessage(event.getPlayerName() + " -> Reset the game.");
-            }
-            
         }
     }
     
@@ -390,13 +390,13 @@ public final class GameClient
     }
 
     /**
-     * Gets this class's clientMessageThread object.
+     * Gets this class's pollingThread object.
      * 
      * @return A Thread object containing the pollServer remote method call.
      */
-    public Thread getClientMessageThread()
+    public Thread getPollingThread()
     {
-        return clientMessageThread;
+        return pollingThread;
     }
     
     /**

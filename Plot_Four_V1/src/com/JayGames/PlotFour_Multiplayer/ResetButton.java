@@ -14,7 +14,7 @@ import javafx.scene.transform.Translate;
 public class ResetButton 
 {
     private final GameClient gameClient;
-    
+    private final GameManager gameManager;
     private final PlotFourGame plotFourGame;
     
     //Stores the values of the resetButton.
@@ -28,9 +28,10 @@ public class ResetButton
      * @param plotFourGame An object of type PlotFourGame for the button to
      * relay the reset request.
      */
-    public ResetButton(GameClient gameClient, PlotFourGame plotFourGame)
+    public ResetButton(GameClient gameClient, GameManager gameManager, PlotFourGame plotFourGame)
     {
         this.gameClient = gameClient;
+        this.gameManager = gameManager;
         this.plotFourGame = plotFourGame;
         
         button = new Button();
@@ -42,7 +43,10 @@ public class ResetButton
         {
             if (gameClient.getPlayerNumber() == 1 || gameClient.getPlayerNumber() == 2)
             {
-                this.plotFourGame.relayResetRequest();
+                if (this.gameManager.getTurnCount() > 0)
+                {
+                    this.plotFourGame.relayResetRequest();
+                }
             }
         });
     }

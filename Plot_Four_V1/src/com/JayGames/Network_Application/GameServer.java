@@ -178,8 +178,6 @@ public final class GameServer implements ServerInterface
     {
         System.out.println("GameServer: connect: Client: " + clientName + " attempting to connect...");
         
-        
-        
         if (!clientConnections.containsKey(clientName))
         {           
             ClientConnection newClientConnection = new ClientConnection();
@@ -197,7 +195,7 @@ public final class GameServer implements ServerInterface
             }
             
             //Announce new connection.
-            Message newClientMessage = new Message(clientName, "Has connected.", true, false);
+            Message newClientMessage = new Message(clientName, "Has connected.", true, false, true);
             messages.add(newClientMessage);
             
             //Collect the names of all current connected clients to an array.
@@ -296,6 +294,15 @@ public final class GameServer implements ServerInterface
     {
         for (GameEvent event : newgameEvents)
         {
+            if (event.getIsResetRequestEvent())
+            {
+                gameEvents.clear();
+                
+                Message resetMessage = new Message(event.getPlayerName(),
+                        "Reset the game.", false, false, true);
+                messages.add(resetMessage);            
+                break;
+            }
             gameEvents.add(event);
             System.out.println("GameServer: addGameEvent: Adding event");
         }
@@ -380,7 +387,7 @@ public final class GameServer implements ServerInterface
         clientConnections.remove(clientName);
 
         Message disconnectMessage = new Message(clientName,
-                "Has disconnected.", false, true);
+                "Has disconnected.", false, true, true);
         messages.add(disconnectMessage);
 
         System.out.println("GameServer: disconnect: Client: " + clientName + " Successfully disconnected.");

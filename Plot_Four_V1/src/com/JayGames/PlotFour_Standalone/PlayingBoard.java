@@ -8,7 +8,7 @@ import javafx.scene.shape.Rectangle;
  * Date: 2018/10/14
  * @author Jeffrey McMullen II
  * 
- * Represents the playing board that the players will be using to play Connect Four.
+ * Represents the playing board that the players will be using to play Plot Four.
  */
 public class PlayingBoard 
 {

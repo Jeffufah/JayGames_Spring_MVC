@@ -19,24 +19,28 @@ public class Message implements Serializable
     private final String message;
     private final boolean isNewClient;
     private final boolean isClientDisconnecting;
+    private final boolean tempMessage;
     
     /**
      * Constructs the class to contain the client's name, the message, a boolean
-     * to check if the client is new, and a boolean to check if the client is
-     * disconnecting.
+     * to check if the client is new, a boolean to check if the client is
+     * disconnecting, and a boolean of true if the message is temporary.
      * 
      * @param name A String containing the name of the client.
      * @param message A String containing the message of the client.
      * @param isNewClient A boolean determining if the client is new.
      * @param isClientDisconnecting A boolean determining if the client is
      * disconnecting.
+     * @param tempMessage A boolean 
      */
-    public Message(String name, String message, boolean isNewClient, boolean isClientDisconnecting)
+    public Message(String name, String message, boolean isNewClient, 
+            boolean isClientDisconnecting, boolean tempMessage)
     {
         this.name = name;
         this.message = message;
         this.isNewClient = isNewClient;
         this.isClientDisconnecting = isClientDisconnecting;
+        this.tempMessage = tempMessage;
     }
 
     /**
@@ -73,5 +77,16 @@ public class Message implements Serializable
     public boolean getIsClientDisconnecting()
     {
         return isClientDisconnecting;
+    }
+
+    /**
+     * Returns true if the message should be temporarily visible.
+     * 
+     * @return A boolean of true if the message should only be temporarily
+     * visible.
+     */
+    public boolean getIsTempMessage()
+    {
+        return tempMessage;
     }
 }

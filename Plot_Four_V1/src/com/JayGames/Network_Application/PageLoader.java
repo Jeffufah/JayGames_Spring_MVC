@@ -13,7 +13,7 @@ import javafx.stage.WindowEvent;
 
 /**
  * Course ID: EYF-649 
- * Date: 2019/03/14
+ * Date: 2019/04/01
  * @author Jeffrey McMullen II
  *
  * The PageLoader is how all menus are accessed in the program. When a certain
@@ -25,6 +25,7 @@ public class PageLoader
     private Stage primaryStage;
     private Scene mainScene;
     private MainMenu mainMenu;
+    private LoginMenu loginMenu;
     private MultiplayerMenu multiplayerMenu;
     private HostMenu hostMenu;
     private ClientMenu clientMenu;
@@ -73,11 +74,25 @@ public class PageLoader
         mainMenu = new MainMenu(this);
     }
     
+    /**
+     * Loads the login menu.
+     */
+    public void loadLoginMenu()
+    {
+        loginMenu = new LoginMenu(this);
+    }
+    
+    /**
+     * Loads the multiplayer menu.
+     */
     public void loadMultiplayerMenu()
     {
         multiplayerMenu = new MultiplayerMenu(this);
     }
     
+    /**
+     * Loads the Standalone Plot Four game.
+     */
     public void loadPlotFourGameStandalone()
     {
         plotFourGameStandalone = new PlotFourGame(this);

@@ -7,7 +7,7 @@ import javafx.scene.paint.Color;
  * Date: 2018/10/14
  * @author Jeffrey McMullen II
  * 
- * Create a class to manage the Connect Four game-play.
+ * Create a class to manage the Plot Four game-play.
  */
 public class GameManager 
 {

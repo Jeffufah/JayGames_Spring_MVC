@@ -47,7 +47,7 @@ public class PlotFourGame
 
         //Create a ResetButton object passign the playingGrid and root to it
         //for handling an event to reset the game when the button is clicked.
-        resetButton = new ResetButton(gameClient, this);
+        resetButton = new ResetButton(gameClient, gameManager, this);
         root.getChildren().add(resetButton.getButton());
 
         //Used to space the rows of chip slots.
