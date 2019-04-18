@@ -1,5 +1,4 @@
 com\jaygames_spring_mvc\controllers\Home.class
-com\jaygames_spring_mvc\controllers_practice\DayOfWeekBasedAccessInterceptor.class
 com\jaygames_spring_mvc\custom_annotations_practice\IsValidHobby.class
 com\jaygames_spring_mvc\models_practice\Address.class
 com\jaygames_spring_mvc\models_practice\Student.class

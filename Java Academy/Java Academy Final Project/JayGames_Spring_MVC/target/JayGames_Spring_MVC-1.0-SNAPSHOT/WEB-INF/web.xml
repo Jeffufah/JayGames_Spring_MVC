@@ -12,7 +12,7 @@
     </session-config>
     
     <welcome-file-list>
-        <welcome-file>Home</welcome-file>
+        <welcome-file>Welcome.jsp</welcome-file>
     </welcome-file-list>
     
     <listener>

@@ -33,7 +33,7 @@
         Directs the controller to listed location to include css files and images.
     -->
     <mvc:resources mapping="/css/**" location="/WEB-INF/resources/css/" />
-    <mvc:resources mapping="/lol/**" location="/WEB-INF/resources/images/" />
+    <mvc:resources mapping="/images/**" location="/WEB-INF/resources/images/" />
     
     <!--
         Tells the front controller to start here before processing any requests.

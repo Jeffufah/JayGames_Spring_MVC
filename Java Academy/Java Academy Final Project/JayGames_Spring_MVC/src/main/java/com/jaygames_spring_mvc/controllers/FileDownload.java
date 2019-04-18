@@ -32,7 +32,7 @@ public class FileDownload
         Path file = Paths.get(dataDirectory, fileName);
         if (Files.exists(file))
         {
-            response.setContentType("application/zip");
+            response.setContentType("application/jar");
             response.addHeader("Content-Disposition", "attachment; filename=" + fileName);
 
             try

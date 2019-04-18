@@ -12,7 +12,7 @@
             <li><a  class="active" href="Games">Games</a></li>
         </ul>
         
-        <a href="download/PlotFour.zip">Download PlotFour</a>
+        <a href="download/Plot_Four.jar">Download PlotFour</a>
         <br>
         ${user.loginStatus}
     </body>
