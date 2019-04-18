@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="x10JAYWebApplication.jnlp">
+  <information>
+    <title>x10JAYWebApplication</title>
+    <vendor>Owner</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="x10JAYWebApplication.jar" size="10563" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="x10JAYWebApplication" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="X10JAYWebApplication"  name="x10JAYWebApplication" />
+  <update check="always"/>
+</jnlp>
