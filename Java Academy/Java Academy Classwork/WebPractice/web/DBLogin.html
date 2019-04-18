@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>
+            DBLogin
+        </title>
+    </head>
+    <body>
+        <form method = "post" action = "DBLoginInitialization.jsp">
+            JDBC 
+            <select name = "driver" size = "1">
+                <option>com.mysql.jdbc.Driver</option>
+            </select><br /><br />
+            URL
+            <select name = "url" size = "1">
+                <option>jdbc:mysql://localhost/WebPractice</option>
+            </select><br /><br />
+            Username <input name = "username" /><br /><br />
+            Password <input name = "password" /><br /><br />
+            <input type = "submit" name = "Submit" value = "Login" />
+            <input type = "reset" value = "Reset" />
+        </form>
+    </body>
+</html>
