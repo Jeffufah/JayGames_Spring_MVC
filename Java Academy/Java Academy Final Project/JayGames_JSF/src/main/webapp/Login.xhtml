@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <h:outputStylesheet name="css/navbar.css"/>
+        <title>
+            JAY Games Login
+        </title>
+    </h:head>
+    <h:body>
+        <ul>
+            <li><a href="index.xhtml">Home</a></li>
+            <li><a class="active" href="Login.xhtml">Login</a></li>
+            <li><a href="Games.xhtml">Games</a></li>
+        </ul>
+
+        <div style="padding:0px;margin-top:0px;background-color:#1abc9c;height:1500px;">
+            <div id="Login" style="clear:both;">
+                <div style="float:right;">
+                    <div style="text-align:left;">
+                        <h:form>
+                            <h:outputLabel value="Username: "/>
+                            <h:inputText style="text-align: left; width: 150px"
+                                         id="usernameInputText"
+                                         value="#{loginBean.username}"/>
+                            <br/>
+                            <h:outputLabel value="Password: "/>
+                            <h:inputText style="text-align: left; width: 150px"
+                                         id="passwordInputText"
+                                         value="#{loginBean.password}"/>
+                            <br/>
+                            <h:commandButton style="margin-left: 0px" value="Login"
+                                             action="#{loginBean.queryLoginDB()}"/>
+                            <h:outputText style="color: black"
+                                          value="#{loginBean.loginStatus}" />
+                        </h:form>
+                        <br />
+                        <h:form>
+                            <h:commandButton style="margin-left: 0px" value="Sign Up"
+                                             action="UserRegistration"/>
+                        </h:form>
+                    </div>
+                </div>
+            </div>     
+        </div>
+           
+    </h:body>
+</html>
