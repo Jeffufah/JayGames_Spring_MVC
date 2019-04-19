@@ -1,4 +1,3 @@
-# Index
-Java Academy
+# Java Academy
   - Classwork
   - Final Project
