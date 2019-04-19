@@ -1,0 +1,56 @@
+ALTER TABLE banned_accounts
+ADD FOREIGN KEY (`BA_ban_type`) REFERENCES ban_types(`Type_id`); 
+
+ALTER TABLE banned_accounts
+ADD FOREIGN KEY (`BA_user_id`) REFERENCES users(`User_id`); 
+
+ALTER TABLE forum_posts
+ADD FOREIGN KEY (`FP_thread_id`) REFERENCES forum_threads(`Thread_id`); 
+
+ALTER TABLE forum_posts
+ADD FOREIGN KEY (`FP_user_id`) REFERENCES users(`User_id`); 
+
+ALTER TABLE forums_threads
+ADD FOREIGN KEY (`FT_forum_id`) REFERENCES forums(`Forum_id`); 
+
+ALTER TABLE friends
+ADD FOREIGN KEY (`FR_user_id`) REFERENCES users(`User_id`); 
+
+ALTER TABLE friends
+ADD FOREIGN KEY (`FR_friend_id`) REFERENCES users(`User_id`); 
+
+ALTER TABLE friend_events
+ADD FOREIGN KEY (`FE_user_id`) REFERENCES users(`User_id`); 
+
+ALTER TABLE friend_events
+ADD FOREIGN KEY (`FR_friend_id`) REFERENCES users(`User_id`); 
+
+ALTER TABLE game_events
+ADD FOREIGN KEY (`GE_game_id`) REFERENCES game_info(`Game_id`); 
+
+ALTER TABLE game_events
+ADD FOREIGN KEY (`GE_user_id`) REFERENCES users(`User_id`); 
+
+ALTER TABLE log_events
+ADD FOREIGN KEY (`LE_user_id`) REFERENCES users(`User_id`); 
+
+ALTER TABLE log_events
+ADD FOREIGN KEY (`LE_device_id`) REFERENCES devices(`Device_id`); 
+
+ALTER TABLE transactions
+ADD FOREIGN KEY (`TR_user_id`) REFERENCES users(`User_id`); 
+
+ALTER TABLE transactions
+ADD FOREIGN KEY (`TR_game_id`) REFERENCES game_info(`Game_id`); 
+
+ALTER TABLE transactions
+ADD FOREIGN KEY (`TR_discount_id`) REFERENCES discounts(`Discount_id`); 
+
+ALTER TABLE users
+ADD FOREIGN KEY (`USR_privacy_id`) REFERENCES privacy(`Privacy_id`); 
+
+ALTER TABLE game_servers
+ADD FOREIGN KEY (`GS_game_id`) REFERENCES game_info(`Game_id`); 
+
+ALTER TABLE game_servers
+ADD FOREIGN KEY (`GS_user_id`) REFERENCES users(`User_id`);
