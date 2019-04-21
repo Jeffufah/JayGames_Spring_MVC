@@ -1,3 +1,4 @@
 # Java Academy
-  - Classwork
-  - Final Project
+	- Contains coursework, tutorials, and projects.
+	- Classwork
+	- Final Project
