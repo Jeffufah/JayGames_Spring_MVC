@@ -3,7 +3,8 @@ presence in the database. The clients using the Plot Four game are meant to see 
 intend random players to be able to access their game.
 
 I'd experienced a bug with creating new MySQL users to access the database and did not want to
-spend too much time troubleshooting an issue with a prototype. So in the mean time, I import
+spend too much time troubleshooting an issue with this prototype when there is so much other work
+to get finished. So in the mean time, I import
 the credentials to access the database from a php script that's not in the public directory.
 I still need to implement measures to protect against SQL Injection and look into salt hashing 
 passwords.
