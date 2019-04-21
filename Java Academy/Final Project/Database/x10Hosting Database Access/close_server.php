@@ -1,5 +1,5 @@
 <?php
-	//Include the database_credentials.php script variables to access the database with.
+	//Include the database_credentials.php script variables to access the database with..
 	include "/home/jaygame2/includes/admin_database_credentials.php";	
 	
 	$userID = $_POST['userID'];
