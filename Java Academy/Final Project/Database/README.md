@@ -8,7 +8,7 @@ Access folder constinas the php scripts used to query the database. It's by no m
 making the Plot Four game networkable. I need to integrate prepared statements and look into password salt hashing
 to protect users.
 
-I exported the database in its current state as an .sql file and placed a txt document containing
+I exported the database in its current state as an .sql file and placed a .txt document containing
 the queries required to join the tables between their primary and foreign keys. (I haven't figured out
 how to get MySQL to export it with the keys intact.) Also, phpmyadmin has a nice feature called designer
 view, which lets you drag and drop your tables around for a nice view of the schema. Most of these tables

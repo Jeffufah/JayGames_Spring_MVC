@@ -14,22 +14,17 @@
 		die ("Empty login credentials are not allowed.");
 	}
 	
-	//Make Connection
 	$connection = mysqli_connect($admin_serverName, $admin_user, $admin_password, $admin_dbName);
 	
-	//Check Connection
-	//If connection failure, print connection error
 	if (!$connection)
 	{
-		die ("Error".mysqli_connect_error());	
+		die ("Error".mysqli_connect_error());
 	}
 		
-	//Validate the id, username, and password
 	$validationQuery = "SELECT `User_id` FROM `users` WHERE `User_id` = \"".$userID."\" AND `Username` = \"".$uName."\" AND `Password` = \"".$pWord."\";";		
 		
 	$validationSQLResult = mysqli_query ($connection, $validationQuery);
 			
-	//Show data for each column name in User table.
 	if (mysqli_num_rows($validationSQLResult) > 0)
 	{		
 		$deleteStaleServersQuery = "DELETE FROM `game_servers` WHERE heartbeat_timestamp < (NOW() - INTERVAL 1 MINUTE);";
