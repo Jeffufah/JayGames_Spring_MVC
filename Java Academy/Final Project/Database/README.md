@@ -12,5 +12,7 @@ I exported the database in its current state as an .sql file and placed a .txt d
 the queries required to join the tables between their primary and foreign keys. (I haven't figured out
 how to get MySQL to export it with the keys intact.) Also, phpmyadmin has a nice feature called designer
 view, which lets you drag and drop your tables around for a nice view of the schema. Most of these tables
-haven't been implemented yet. They are there however, because our team spent the early part of the project
-planning what kinds of features we'd like our product to have.
+haven't been implemented yet. The project was rather ambitious and we weren't experienced enough to deliver
+the product (multiplayer game), and a website that implements many of the features the database suggests.
+I felt that the Plot Four game was more interesting to interact with than the website so I focused most on
+that aspect of the project.
