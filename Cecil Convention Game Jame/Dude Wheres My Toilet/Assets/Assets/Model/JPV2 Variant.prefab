@@ -1,0 +1,120 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!65 &481605254892843236
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451806236770560844}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 4.43, z: 1}
+  m_Center: {x: -0.18, y: 2.16, z: 0}
+--- !u!114 &223139245709500705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451806236770560844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d57518cd3f60416b9d72128226f19e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6695217398073278122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451806236770560844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8659ceebc66c8f4e85f33064ee92c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entityName: HealthPickup
+--- !u!114 &7966934241898560858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451806236770560844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd5861a8278fd74698bc760610029db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpType: JumpPickup
+--- !u!1001 &3451806236770463214
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 100002, guid: 59c4e7c3a8a801c4ea9ef2bc989a97c0, type: 3}
+      propertyPath: m_Name
+      value: JPV2 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 59c4e7c3a8a801c4ea9ef2bc989a97c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 59c4e7c3a8a801c4ea9ef2bc989a97c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.22
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 59c4e7c3a8a801c4ea9ef2bc989a97c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 5.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 59c4e7c3a8a801c4ea9ef2bc989a97c0, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 59c4e7c3a8a801c4ea9ef2bc989a97c0, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 59c4e7c3a8a801c4ea9ef2bc989a97c0, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 59c4e7c3a8a801c4ea9ef2bc989a97c0, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 59c4e7c3a8a801c4ea9ef2bc989a97c0, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 59c4e7c3a8a801c4ea9ef2bc989a97c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 59c4e7c3a8a801c4ea9ef2bc989a97c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400002, guid: 59c4e7c3a8a801c4ea9ef2bc989a97c0, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 59c4e7c3a8a801c4ea9ef2bc989a97c0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5e9f223bb81850d4ea375878f0053268, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 59c4e7c3a8a801c4ea9ef2bc989a97c0, type: 3}
+--- !u!1 &3451806236770560844 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: 59c4e7c3a8a801c4ea9ef2bc989a97c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3451806236770463214}
+  m_PrefabAsset: {fileID: 0}
