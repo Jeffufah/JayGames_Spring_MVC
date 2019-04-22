@@ -9,9 +9,9 @@ Lose all your health, and you lose the game.
 	would in turn relay the information to all clients that are on the network. We ran out of time to implement networking but continued to 
 	develop the game within this framework.
 	- Commands for user input like walking, running, and jumping.
-	- More commands to add and remove objects in the playing scene and object trigger events.
+	- More commands to add and remove objects in the playing scene and object trigger events like powerup pickups.
 	- The enemy (aka The Thing). Randomly moving it between different rooms. Causing it to damage the player (more commands). 
-	- Writing the initialization code to store vectors from each room into a list for randomization.
+	- Writing the initialization code to store vectors from each room into a list for spawn randomization.
 	- Spawning in powerup objects at random places in the room as well as the Toilet (goal).
 	- Integrating art assets with the code such as the enemy, powerups, and HUD.
 	
