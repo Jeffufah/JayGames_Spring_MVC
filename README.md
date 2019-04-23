@@ -1,5 +1,5 @@
-# CPlusPlus Projects
-	- Contains practice CPlusPlus programs.
+# CPlusPlus
+	- Contains CPlusPlus projects.
 
 # Cecil Convention Game Jam
 	- Contains 24 hour Game Jam project and description.
