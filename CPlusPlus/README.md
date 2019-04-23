@@ -1,7 +1,5 @@
-# Cecil Convention Game Jam
-	- Contains 24 hour Game Jam project and description.
+# Angle Finder
+	- Calculates appropriate angle of fire to hit a target given parameter input.
 
-# Java Academy
-	- Contains coursework, tutorials, and projects.
-	- Classwork
-	- Final Project
+# Family_Archiver
+	- Persists family names and member names to a binary file for saving and loading of user data input.
