@@ -1,0 +1,28 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\BossFireballScript.cs">
+    <Files>
+      <File FileName="Assets\Scripts\Jeff Scripts\EnemyHealth.cs" Line="11" Column="20" />
+      <File FileName="Assets\Scripts\Jeff Scripts\GhostSpotter.cs" Line="56" Column="31" />
+      <File FileName="Assets\Scripts\Jeff Scripts\ParticleDeath.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Jeff Scripts\ghostTracking.cs" Line="26" Column="45" />
+      <File FileName="Assets\Scripts\Jeff Scripts\HealthDisplay.cs" Line="15" Column="1" />
+      <File FileName="Assets\Scripts\Jeff Scripts\PriestScript.cs" Line="47" Column="22" />
+      <File FileName="Assets\Scripts\Ryan Scripts\zoulScript.cs" Line="43" Column="1" />
+      <File FileName="Assets\Scripts\Ryan Scripts\ShottyScript.cs" Line="49" Column="5" />
+      <File FileName="Assets\Scripts\Ryan Scripts\WeaponSwitch.cs" Line="10" Column="27" />
+      <File FileName="c:\Users\Owner\Documents\Dunwich HorrorV01F\Assets\Scripts\Ryan Scripts\UI_Script.cs" Line="16" Column="36" />
+      <File FileName="c:\Users\Owner\Documents\Dunwich HorrorV01F\Assets\Scripts\Ryan Scripts\bigboomer_Script.cs" Line="32" Column="17" />
+      <File FileName="c:\Users\Owner\Documents\Dunwich HorrorV01F\Assets\Scripts\Ryan Scripts\bigboomer_pickup_script.cs" Line="34" Column="5" />
+      <File FileName="Assets\Scripts\Ryan Scripts\FinalBoss_HeadFollow.cs" Line="26" Column="1" />
+      <File FileName="Assets\Scripts\BossAttackScript.cs" Line="18" Column="4" />
+      <File FileName="Assets\Scripts\BossFireballScript.cs" Line="12" Column="1" />
+      <File FileName="Assets\Scripts\Health.cs" Line="44" Column="1" />
+      <File FileName="Assets\Scripts\Jeff Scripts\MenuManager.cs" Line="72" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>

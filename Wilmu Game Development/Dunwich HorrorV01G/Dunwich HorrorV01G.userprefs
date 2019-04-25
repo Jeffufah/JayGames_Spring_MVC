@@ -1,0 +1,17 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Jeff Scripts\HealthDisplay.cs">
+    <Files>
+      <File FileName="..\FPS_Template\Assets\Scripts\GrenadeMoving.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Jeff Scripts\ghostTracking.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Jeff Scripts\GhostSpotter.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Jeff Scripts\HealthDisplay.cs" Line="15" Column="3" />
+      <File FileName="Assets\Scripts\Jeff Scripts\constant_rotation.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Health.cs" Line="6" Column="25" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
