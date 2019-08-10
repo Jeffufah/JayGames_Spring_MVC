@@ -96,6 +96,7 @@ public class StationDetectionScript : MonoBehaviour
 
     public IEnumerator RelayStationInput(int SensorID, int StationID, int WandID, string date, string time)
     {
+        Debug.Log("hi");
         user = "schoolt5_owl";
         password = "hoot";
 

@@ -102,9 +102,9 @@ public class SpawnCharacters : MonoBehaviour
         form3.AddField("password", password);
         form3.AddField("SQLSTATEMENT", sql3);
 
-        WWW w = new WWW("http://jaygames.x10host.com/home/jaygame2/public_html/scripts/OwlConnect.php", form1);
-        WWW p = new WWW("http://jaygames.x10host.com/home/jaygame2/public_html/scripts/OwlConnect.php", form2);
-        WWW z = new WWW("http://jaygames.x10host.com/home/jaygame2/public_html/scripts/OwlConnect.php", form3);
+        WWW w = new WWW("http://jaygames.x10host.com/scripts/OwlConnect.php", form1);
+        WWW p = new WWW("http://jaygames.x10host.com/scripts/OwlConnect.php", form2);
+        WWW z = new WWW("http://jaygames.x10host.com/scripts/OwlConnect.php", form3);
 
         yield return (Connect1(w,p,z));
     }

@@ -178,9 +178,8 @@ public class PositionRelayedWeb : MonoBehaviour
         form1.AddField("password", password);
         form1.AddField("SQLSTATEMENT", sql1);
 
-        WWW w = new WWW("http://jaygames.x10host.com/home/jaygame2/public_html/scripts/OwlConnect.php", form1);
+        WWW w = new WWW("http://jaygames.x10host.com/scripts/OwlConnect.php", form1);
 
-        //WWW w = new WWW("http://schooltester.x10host.com/phpscripts/Login.php", form1);
         yield return(Connect(w));
     }
 
@@ -250,9 +249,8 @@ public class PositionRelayedWeb : MonoBehaviour
         form1.AddField("password", password);
         form1.AddField("SQLSTATEMENT", sql3);
 
-        WWW w = new WWW("http://jaygames.x10host.com/home/jaygame2/public_html/scripts/OwlConnect.php", form1);
+        WWW w = new WWW("http://jaygames.x10host.com/scripts/OwlConnect.php", form1);
 
-        //WWW w = new WWW("http://schooltester.x10host.com/phpscripts/Login.php", form1);
         yield return(Connect2(w));
     }
 
@@ -311,9 +309,8 @@ public class PositionRelayedWeb : MonoBehaviour
         form1.AddField("SQLSTATEMENT", sql2);
 
 
-        WWW w = new WWW("http://jaygames.x10host.com/home/jaygame2/public_html/scripts/OwlConnect.php", form1);
+        WWW w = new WWW("http://jaygames.x10host.com/scripts/OwlConnect.php", form1);
 
-        //WWW w = new WWW("http://schooltester.x10host.com/phpscripts/Login.php", form1);
         yield return(Connect1(w));
     }
 
@@ -352,9 +349,8 @@ public class PositionRelayedWeb : MonoBehaviour
         form1.AddField("SQLSTATEMENT", sql4);
 
 
-        WWW w = new WWW("http://jaygames.x10host.com/home/jaygame2/public_html/scripts/OwlConnect.php", form1);
+        WWW w = new WWW("http://jaygames.x10host.com/scripts/OwlConnect.php", form1);
 
-        //WWW w = new WWW("http://schooltester.x10host.com/phpscripts/Login.php", form1);
         yield return(Connect3(w));
     }
 

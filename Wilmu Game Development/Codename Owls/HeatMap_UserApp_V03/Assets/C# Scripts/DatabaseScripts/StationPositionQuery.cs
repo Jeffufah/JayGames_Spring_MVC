@@ -38,7 +38,7 @@ public class StationPositionQuery : MonoBehaviour
     public IEnumerator RetrievePositionData()
     {
 
-        //Debug.Log("Spawn called.");
+        Debug.Log("Spawn called.");
 
         user = "schoolt5_owl";
         password = "hoot";
