@@ -150,7 +150,7 @@ public final class GameServer implements ServerInterface
         if (diff > 1)
         {
             double version = 0.1;
-            String url = "http://jaygames.x10host.com/home/jaygame2/public_html/scripts/update_server.php";
+            String url = "http://jaygames.x10host.com/scripts/update_server.php";
             
             
             String[] fields =

@@ -84,7 +84,7 @@ public class LobbyMenu
             connectButton.setVisible(false);
             
             double version = 0.1;
-            String url = "http://jaygames.x10host.com/home/jaygame2/public_html/scripts/get_servers.php";
+            String url = "http://jaygames.x10host.com/scripts/get_servers.php";
             
             UserInfo userInfo = pageLoader.getUserInfo();
 

@@ -83,7 +83,7 @@ public class HostMenu
                         if (!hostIP.equals(""))
                         {
                             double version = 0.1;
-                            String url = "http://jaygames.x10host.com/home/jaygame2/public_html/scripts/create_server.php";
+                            String url = "http://jaygames.x10host.com/scripts/create_server.php";
                             
                             UserInfo userInfo = pageLoader.getUserInfo();
                             

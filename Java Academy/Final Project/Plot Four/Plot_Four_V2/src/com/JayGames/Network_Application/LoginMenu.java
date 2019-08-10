@@ -61,7 +61,7 @@ public class LoginMenu
             if (!userNameTextField.getText().equals("") && !userPasswordTextField.getText().equals(""))
             {                
                 double version = 0.1;
-                String url = "http://jaygames.x10host.com/home/jaygame2/public_html/scripts/login.php";
+                String url = "http://jaygames.x10host.com/scripts/login.php";
                 String[] fields =
                 {
                     "uName" + ":" + userNameTextField.getText() + ";",
